@@ -1,3 +1,4 @@
+import 'package:covid/apartment.dart';
 import 'package:covid/results_page.dart';
 import 'package:flutter/material.dart';
 import 'input_page1.dart';
@@ -19,6 +20,7 @@ class CovidCalculator extends StatelessWidget {
         '/': (context) => HomePlace(),
         '/resultPage': (context) => ResultsPage(),
         '/inputPage1': (context) => InputPage1(),
+        '/apartment': (context) => Apartment(),
       },
     );
   }

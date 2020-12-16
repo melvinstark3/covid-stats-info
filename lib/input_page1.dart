@@ -100,8 +100,8 @@ class _InputPage1State extends State<InputPage1> {
                   ),
                   Slider(
                       value: density.toDouble(),
-                      min: kMinimumHeight,
-                      max: kMaxinumHeight,
+                      min: kMinimumDensity,
+                      max: kMaximumDensity,
                       activeColor: Color(0xFFEB1555),
                       inactiveColor: Color(0xFF8D8E98),
                       onChanged: (double newValue) {
