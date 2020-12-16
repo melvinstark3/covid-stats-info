@@ -3,10 +3,11 @@ import 'dart:math';
 class CalculatorBrain {
   final int density;
   final int familyMembers;
+  final int peopleOnFloor;
 
   double _covidResult;
 
-  CalculatorBrain({this.density, this.familyMembers});
+  CalculatorBrain({this.density, this.familyMembers, this.peopleOnFloor});
 
   String calculateBMI() {
     _covidResult = familyMembers / pow(density / 100, 2);

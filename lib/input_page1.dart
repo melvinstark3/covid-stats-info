@@ -10,12 +10,12 @@ import 'calculator_brain.dart';
 
 enum gender { male, female }
 
-class InputPage extends StatefulWidget {
+class InputPage1 extends StatefulWidget {
   @override
-  _InputPageState createState() => _InputPageState();
+  _InputPage1State createState() => _InputPage1State();
 }
 
-class _InputPageState extends State<InputPage> {
+class _InputPage1State extends State<InputPage1> {
   gender selectedGender;
   int density = 180;
   int familyMembers = 6;

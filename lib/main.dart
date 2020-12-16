@@ -1,6 +1,7 @@
 import 'package:covid/results_page.dart';
 import 'package:flutter/material.dart';
 import 'input_page1.dart';
+import 'home_place.dart';
 import 'results_page.dart';
 
 void main() => runApp(CovidCalculator());
@@ -15,8 +16,9 @@ class CovidCalculator extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => InputPage(),
+        '/': (context) => HomePlace(),
         '/resultPage': (context) => ResultsPage(),
+        '/inputPage1': (context) => InputPage1(),
       },
     );
   }
