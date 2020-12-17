@@ -1,4 +1,5 @@
 import 'package:covid/input_page1.dart';
+import 'package:covid/transport.dart';
 //import 'package:covid/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,8 +8,9 @@ import 'reusable_card.dart';
 import 'constants.dart';
 import 'bottom_button.dart';
 import 'round_icon_button.dart';
-//import 'calculator_brain.dart';
+import 'calculator_brain.dart';
 
+// deskjob =1, fieldjob =2
 enum jobType { desk, field }
 
 class Job extends StatefulWidget {
@@ -19,6 +21,7 @@ class Job extends StatefulWidget {
 class _JobState extends State<Job> {
   jobType selectedJob;
   int colleagues = 50;
+  int jobTypeNum;
   int interaction = 6;
   int workHours = 8;
 
@@ -40,6 +43,7 @@ class _JobState extends State<Job> {
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
+                      jobTypeNum = selectedJob == jobType.desk ? 2 : 1;
                       setState(() {
                         selectedJob = jobType.desk;
                       });
@@ -58,6 +62,7 @@ class _JobState extends State<Job> {
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
+                      jobTypeNum = selectedJob == jobType.field ? 1 : 2;
                       setState(() {
                         selectedJob = jobType.field;
                       });
@@ -176,7 +181,7 @@ class _JobState extends State<Job> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'workHours',
+                          'Work Hours',
                           style: kLabelTextStyle,
                         ),
                         Text(
@@ -221,9 +226,14 @@ class _JobState extends State<Job> {
           ),
           BottomButton(
             onTap: () {
+              CalculatorBrain calc = CalculatorBrain(
+                  colleagues: colleagues,
+                  jobTypeNum: jobTypeNum,
+                  interactions: interaction,
+                  workHours: workHours);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => InputPage1()),
+                MaterialPageRoute(builder: (context) => Transport()),
               );
             },
             buttonTitle: 'NEXT',

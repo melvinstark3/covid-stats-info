@@ -6,7 +6,6 @@ import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
 import 'bottom_button.dart';
-import 'round_icon_button.dart';
 import 'calculator_brain.dart';
 import 'home_place.dart';
 import 'input_page1.dart';
@@ -156,6 +155,8 @@ class _ApartmentState extends State<Apartment> {
 
           BottomButton(
             onTap: () {
+              CalculatorBrain calc =
+                  CalculatorBrain(floors: floors, inhabitants: inhabitants);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Job()),

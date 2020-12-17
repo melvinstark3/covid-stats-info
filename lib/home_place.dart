@@ -7,6 +7,7 @@ import 'reusable_card.dart';
 import 'constants.dart';
 import 'bottom_button.dart';
 import 'apartment.dart';
+import 'job.dart';
 //import 'calculator_brain.dart';
 
 enum home { house, apartment }
@@ -66,7 +67,7 @@ class _HomePlaceState extends State<HomePlace> {
               if (selectedHome == home.house) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => InputPage1()),
+                  MaterialPageRoute(builder: (context) => Job()),
                 );
               } else {
                 Navigator.push(

@@ -8,6 +8,7 @@ import 'bottom_button.dart';
 import 'round_icon_button.dart';
 import 'calculator_brain.dart';
 
+// male =3. female =4
 enum gender { male, female }
 
 class InputPage1 extends StatefulWidget {
@@ -17,6 +18,7 @@ class InputPage1 extends StatefulWidget {
 
 class _InputPage1State extends State<InputPage1> {
   gender selectedGender;
+  int genderNum;
   int density = 180;
   int familyMembers = 6;
   int age = 20;
@@ -39,6 +41,7 @@ class _InputPage1State extends State<InputPage1> {
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
+                      genderNum = selectedGender == gender.male ? 4 : 3;
                       setState(() {
                         selectedGender = gender.male;
                       });
@@ -57,6 +60,7 @@ class _InputPage1State extends State<InputPage1> {
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
+                      genderNum = selectedGender == gender.female ? 3 : 4;
                       setState(() {
                         selectedGender = gender.female;
                       });
@@ -220,7 +224,10 @@ class _InputPage1State extends State<InputPage1> {
           BottomButton(
             onTap: () {
               CalculatorBrain calc = CalculatorBrain(
-                  density: density, familyMembers: familyMembers);
+                  density: density,
+                  familyMembers: familyMembers,
+                  age: age,
+                  genderNum: genderNum);
               Navigator.push(
                   context,
                   MaterialPageRoute(
