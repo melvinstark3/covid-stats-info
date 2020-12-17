@@ -10,6 +10,8 @@ const kMinimumFloors = 4.0;
 const kMaximumFloors = 150.0;
 const kMinimumInhabitants = 1.0;
 const kMaximumInhabitants = 100.0;
+const kMinimumColleagues = 1.0;
+const kMaximumColleagues = 100.0;
 const kNumberTextStyle = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.w900,

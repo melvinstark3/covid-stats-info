@@ -1,4 +1,5 @@
-import 'package:covid/results_page.dart';
+import 'package:covid/input_page1.dart';
+//import 'package:covid/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
@@ -6,20 +7,20 @@ import 'reusable_card.dart';
 import 'constants.dart';
 import 'bottom_button.dart';
 import 'round_icon_button.dart';
-import 'calculator_brain.dart';
+//import 'calculator_brain.dart';
 
-enum gender { male, female }
+enum jobType { desk, field }
 
-class InputPage1 extends StatefulWidget {
+class Job extends StatefulWidget {
   @override
-  _InputPage1State createState() => _InputPage1State();
+  _JobState createState() => _JobState();
 }
 
-class _InputPage1State extends State<InputPage1> {
-  gender selectedGender;
-  int density = 180;
-  int familyMembers = 6;
-  int age = 20;
+class _JobState extends State<Job> {
+  jobType selectedJob;
+  int colleagues = 50;
+  int interaction = 6;
+  int workHours = 8;
 
   @override
   Widget build(BuildContext context) {
@@ -34,45 +35,46 @@ class _InputPage1State extends State<InputPage1> {
             flex: 1,
             child: Row(
               children: [
-                // male widget
+                // desk widget
                 Expanded(
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
                       setState(() {
-                        selectedGender = gender.male;
+                        selectedJob = jobType.desk;
                       });
                     },
-                    colour: selectedGender == gender.male
+                    colour: selectedJob == jobType.desk
                         ? kActiveCardColor
                         : kInactiveCardColor,
                     cardChild: IconContent(
-                      genderIcon: FontAwesomeIcons.mars,
-                      genderText: 'MALE',
+                      genderIcon: FontAwesomeIcons.blackTie,
+                      genderText: 'Desk',
                     ),
                   ),
                 ),
-                // female Widget
+                // field Widget
                 Expanded(
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
                       setState(() {
-                        selectedGender = gender.female;
+                        selectedJob = jobType.field;
                       });
                     },
-                    colour: selectedGender == gender.female
+                    colour: selectedJob == jobType.field
                         ? kActiveCardColor
                         : kInactiveCardColor,
                     cardChild: IconContent(
-                        genderIcon: FontAwesomeIcons.venus,
-                        genderText: 'FEMALE'),
+                        genderIcon: FontAwesomeIcons.landmark,
+                        genderText: 'Field'),
                   ),
                 ),
               ],
             ),
           ),
-          // The height slider card
+
+          // The Colleagues slider card
           Expanded(
             child: ReusableCard(
               colour: kActiveCardColor,
@@ -80,7 +82,7 @@ class _InputPage1State extends State<InputPage1> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Population Density',
+                    'Number of Colleagues',
                     style: kLabelTextStyle,
                   ),
                   Row(
@@ -89,24 +91,24 @@ class _InputPage1State extends State<InputPage1> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(
-                        density.toString(),
+                        colleagues.toString(),
                         style: kNumberTextStyle,
                       ),
                       Text(
-                        '/sq. Km',
+                        ' Colleagues',
                         style: kLabelTextStyle,
                       ),
                     ],
                   ),
                   Slider(
-                      value: density.toDouble(),
-                      min: kMinimumDensity,
-                      max: kMaximumDensity,
+                      value: colleagues.toDouble(),
+                      min: kMinimumColleagues,
+                      max: kMaximumColleagues,
                       activeColor: Color(0xFFEB1555),
                       inactiveColor: Color(0xFF8D8E98),
                       onChanged: (double newValue) {
                         setState(() {
-                          density = newValue.round();
+                          colleagues = newValue.round();
                         });
                       })
                 ],
@@ -126,11 +128,11 @@ class _InputPage1State extends State<InputPage1> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Family Members',
+                          'Interacted People',
                           style: kLabelTextStyle,
                         ),
                         Text(
-                          familyMembers.toString(),
+                          interaction.toString(),
                           style: kNumberTextStyle,
                         ),
                         SizedBox(
@@ -143,7 +145,7 @@ class _InputPage1State extends State<InputPage1> {
                                 icon: FontAwesomeIcons.plus,
                                 onTap: () {
                                   setState(() {
-                                    familyMembers++;
+                                    interaction++;
                                   });
                                 }),
                             SizedBox(
@@ -153,9 +155,9 @@ class _InputPage1State extends State<InputPage1> {
                               icon: FontAwesomeIcons.minus,
                               onTap: () {
                                 setState(() {
-                                  if (familyMembers == 0) {
+                                  if (interaction == 1) {
                                   } else {
-                                    familyMembers--;
+                                    interaction--;
                                   }
                                 });
                               },
@@ -174,11 +176,11 @@ class _InputPage1State extends State<InputPage1> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'AGE',
+                          'workHours',
                           style: kLabelTextStyle,
                         ),
                         Text(
-                          age.toString(),
+                          workHours.toString(),
                           style: kNumberTextStyle,
                         ),
                         SizedBox(
@@ -191,7 +193,7 @@ class _InputPage1State extends State<InputPage1> {
                                 icon: FontAwesomeIcons.plus,
                                 onTap: () {
                                   setState(() {
-                                    age++;
+                                    workHours++;
                                   });
                                 }),
                             SizedBox(
@@ -201,9 +203,9 @@ class _InputPage1State extends State<InputPage1> {
                               icon: FontAwesomeIcons.minus,
                               onTap: () {
                                 setState(() {
-                                  if (age == 1) {
+                                  if (workHours == 1) {
                                   } else {
-                                    age--;
+                                    workHours--;
                                   }
                                 });
                               },
@@ -219,15 +221,10 @@ class _InputPage1State extends State<InputPage1> {
           ),
           BottomButton(
             onTap: () {
-              CalculatorBrain calc = CalculatorBrain(
-                  density: density, familyMembers: familyMembers);
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ResultsPage(
-                          covidResults: calc.calculateBMI(),
-                          resultText: calc.getResult(),
-                          interpretation: calc.interpretation())));
+                context,
+                MaterialPageRoute(builder: (context) => InputPage1()),
+              );
             },
             buttonTitle: 'NEXT',
           ),

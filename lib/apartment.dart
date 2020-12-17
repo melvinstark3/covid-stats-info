@@ -1,3 +1,4 @@
+import 'package:covid/job.dart';
 import 'package:covid/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -157,7 +158,7 @@ class _ApartmentState extends State<Apartment> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => InputPage1()),
+                MaterialPageRoute(builder: (context) => Job()),
               );
             },
             buttonTitle: 'NEXT',
