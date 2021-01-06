@@ -51,10 +51,10 @@ class CalculatorBrain {
       densityProb = 20;
     }
 
-    if (jobTypeNum == 1) {
-      jobProb = 5;
-    } else {
+    if (jobTypeNum == 2) {
       jobProb = 10;
+    } else {
+      jobProb = 5;
     }
 
     if (familyMembers > 0) {
