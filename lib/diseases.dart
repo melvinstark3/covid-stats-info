@@ -5,24 +5,24 @@ import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
 import 'bottom_button.dart';
-import 'diseases.dart';
 import 'round_icon_button.dart';
 
-enum transportType { car, bus, subway, other }
+enum diseases { fever, cough, diarrhoea, other }
 
-class Transport extends StatefulWidget {
+class Diseases extends StatefulWidget {
   @override
-  _TransportState createState() => _TransportState();
+  _DiseasesState createState() => _DiseasesState();
 }
 
-class _TransportState extends State<Transport> {
-  transportType selectedTransportType;
+class _DiseasesState extends State<Diseases> {
+  diseases selectedTransportType;
+  int dColor, fColor, cColor, oColor;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('COVID'),
+        title: Text('Current Diseases'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -31,40 +31,38 @@ class _TransportState extends State<Transport> {
             flex: 1,
             child: Row(
               children: [
-                // Car widget
+                // fever widget
                 Expanded(
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
                       setState(() {
-                        selectedTransportType = transportType.car;
+                        selectedTransportType = diseases.fever;
+                        fColor = 1;
                       });
                     },
-                    colour: selectedTransportType == transportType.car
-                        ? kActiveCardColor
-                        : kInactiveCardColor,
+                    colour: fColor == 1 ? kActiveCardColor : kInactiveCardColor,
                     cardChild: IconContent(
-                      genderIcon: FontAwesomeIcons.car,
-                      genderText: 'CAR',
+                      genderIcon: FontAwesomeIcons.thermometer,
+                      genderText: 'Fever',
                     ),
                   ),
                 ),
 
-                // Bus Widget
+                // cough Widget
                 Expanded(
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
                       setState(() {
-                        selectedTransportType = transportType.bus;
+                        selectedTransportType = diseases.cough;
+                        cColor = 1;
                       });
                     },
-                    colour: selectedTransportType == transportType.bus
-                        ? kActiveCardColor
-                        : kInactiveCardColor,
+                    colour: cColor == 1 ? kActiveCardColor : kInactiveCardColor,
                     cardChild: IconContent(
-                      genderIcon: FontAwesomeIcons.bus,
-                      genderText: 'Bus',
+                      genderIcon: FontAwesomeIcons.pills,
+                      genderText: 'Dry Cough',
                     ),
                   ),
                 ),
@@ -75,21 +73,20 @@ class _TransportState extends State<Transport> {
             flex: 1,
             child: Row(
               children: [
-                // Subway widget
+                // diarrhoea widget
                 Expanded(
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
                       setState(() {
-                        selectedTransportType = transportType.subway;
+                        selectedTransportType = diseases.diarrhoea;
+                        dColor = 1;
                       });
                     },
-                    colour: selectedTransportType == transportType.subway
-                        ? kActiveCardColor
-                        : kInactiveCardColor,
+                    colour: dColor == 1 ? kActiveCardColor : kInactiveCardColor,
                     cardChild: IconContent(
-                      genderIcon: FontAwesomeIcons.subway,
-                      genderText: 'Subway',
+                      genderIcon: FontAwesomeIcons.toiletPaper,
+                      genderText: 'diarrhoea',
                     ),
                   ),
                 ),
@@ -100,14 +97,13 @@ class _TransportState extends State<Transport> {
                   child: ReusableCard(
                     onPressed: () {
                       setState(() {
-                        selectedTransportType = transportType.other;
+                        selectedTransportType = diseases.other;
+                        oColor = 1;
                       });
                     },
-                    colour: selectedTransportType == transportType.other
-                        ? kActiveCardColor
-                        : kInactiveCardColor,
+                    colour: oColor == 1 ? kActiveCardColor : kInactiveCardColor,
                     cardChild: IconContent(
-                      genderIcon: FontAwesomeIcons.trafficLight,
+                      genderIcon: FontAwesomeIcons.syringe,
                       genderText: 'Others',
                     ),
                   ),
@@ -119,7 +115,7 @@ class _TransportState extends State<Transport> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Diseases()),
+                MaterialPageRoute(builder: (context) => InputPage1()),
               );
             },
             buttonTitle: 'NEXT',
