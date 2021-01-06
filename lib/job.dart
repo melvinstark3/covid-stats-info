@@ -53,7 +53,7 @@ class _JobState extends State<Job> {
                         : kInactiveCardColor,
                     cardChild: IconContent(
                       genderIcon: FontAwesomeIcons.blackTie,
-                      genderText: 'Desk',
+                      genderText: 'Desk Job',
                     ),
                   ),
                 ),
@@ -72,7 +72,7 @@ class _JobState extends State<Job> {
                         : kInactiveCardColor,
                     cardChild: IconContent(
                         genderIcon: FontAwesomeIcons.landmark,
-                        genderText: 'Field'),
+                        genderText: 'Field Job'),
                   ),
                 ),
               ],
