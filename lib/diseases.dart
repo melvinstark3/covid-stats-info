@@ -5,6 +5,7 @@ import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
 import 'bottom_button.dart';
+import 'calculator_brain.dart';
 import 'round_icon_button.dart';
 
 enum diseases { fever, cough, diarrhoea, other }
@@ -16,13 +17,13 @@ class Diseases extends StatefulWidget {
 
 class _DiseasesState extends State<Diseases> {
   diseases selectedTransportType;
-  int dColor, fColor, cColor, oColor;
+  int dColor = 0, fColor = 0, cColor = 0, oColor = 0, totalColor;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Current Diseases'),
+        title: Text('Symptoms/Diseases'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -113,6 +114,8 @@ class _DiseasesState extends State<Diseases> {
           ),
           BottomButton(
             onTap: () {
+              totalColor = dColor + fColor + cColor + oColor;
+              CalculatorBrain calc = CalculatorBrain(diseases: totalColor);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => InputPage1()),

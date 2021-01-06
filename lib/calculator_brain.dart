@@ -12,6 +12,7 @@ class CalculatorBrain {
   final int jobTypeNum;
   final int age;
   final int genderNum;
+  final int diseases;
 
   double _covidResult;
 
@@ -26,6 +27,7 @@ class CalculatorBrain {
       this.interactions,
       this.age,
       this.jobTypeNum,
+      this.diseases,
       this.genderNum});
 
   String calculateBMI() {
@@ -34,6 +36,11 @@ class CalculatorBrain {
     int jobProb;
     int floorProb = 17;
     int familyProb;
+    int diseasesProb;
+
+    if (diseases > 0) {
+      diseasesProb = 10;
+    }
 
     if (genderNum == 3) {
       genderProb = 10;
