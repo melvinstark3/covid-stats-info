@@ -22,7 +22,7 @@ class CovidCalculator extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/': (context) => HomePlace(),
-        '/splash': (context) => splash(),
+        '/splash': (context) => Splash(),
         '/apartment': (context) => Apartment(),
         '/job': (context) => Job(),
         '/inputPage1': (context) => InputPage1(),
