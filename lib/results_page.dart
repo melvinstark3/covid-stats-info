@@ -1,4 +1,3 @@
-import 'package:covid/input_page1.dart';
 import 'package:covid/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 class CalculatorBrain {
   final int density;
   final int familyMembers;
@@ -73,6 +71,7 @@ class CalculatorBrain {
         densityProb +
         floorProb +
         jobProb +
+        diseasesProb +
         familyProb;
     if (_covidResult > 99) {
       _covidResult = 99;
@@ -91,9 +90,9 @@ class CalculatorBrain {
   }
 
   String interpretation() {
-    if (_covidResult >= 25) {
+    if (_covidResult >= 75) {
       return 'Interpretation 1';
-    } else if (_covidResult > 18.5) {
+    } else if (_covidResult > 50) {
       return 'Interpretation 2';
     } else {
       return 'Interpretation 3';
