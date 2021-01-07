@@ -17,7 +17,7 @@ class Diseases extends StatefulWidget {
 
 class _DiseasesState extends State<Diseases> {
   diseases selectedTransportType;
-  int dColor = 0, fColor = 0, cColor = 0, oColor = 0, totalColor;
+  int dColor = 0, fColor = 0, cColor = 0, oColor = 0, totalColor = 0;
 
   @override
   Widget build(BuildContext context) {

@@ -34,10 +34,12 @@ class CalculatorBrain {
     int jobProb;
     int floorProb = 17;
     int familyProb;
-    int diseasesProb;
+    int diseasesProb = 5;
 
-    if (diseases > 0) {
+    if (diseases == 0) {
       diseasesProb = 10;
+    } else {
+      diseasesProb = 5;
     }
 
     if (genderNum == 3) {
