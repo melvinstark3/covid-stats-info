@@ -1,50 +1,23 @@
+import 'package:covid/screens/home_place.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'home_place.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SplashScreen(
+      seconds: 5,
+      image: new Image.asset('images/logo.jpg'),
       backgroundColor: Colors.white,
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HomePlace()),
-              );
-            },
-            child: Image.asset(
-              'images/logo.jpg',
-              fit: BoxFit.cover,
-              width: 250.0,
-              height: 250.0,
-            ),
-          ),
-          SizedBox(
-            width: double.infinity,
-            height: 20.0,
-          ),
-          Text(
-            'Corona',
-            style: TextStyle(
-                color: Colors.black87,
-                fontSize: 40.0,
-                fontWeight: FontWeight.bold),
-          ),
-          Text(
-            'Predictor',
-            style: TextStyle(
-                color: Colors.black87,
-                fontSize: 40.0,
-                fontWeight: FontWeight.bold),
-          ),
-        ],
-      )),
+      photoSize: 200,
+      loadingText: Text('Corona Predictor',
+          style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'MyFont',
+              fontWeight: FontWeight.bold)),
+      loaderColor: Colors.pink,
+      navigateAfterSeconds: HomePlace(),
     );
   }
 }
