@@ -3,10 +3,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:covid/widgets/icon_content.dart';
 import 'package:covid/widgets/reusable_card.dart';
 import 'package:covid/constants/constants.dart';
-import 'package:covid/widgets/bottom_button.dart';
 import 'package:covid/screens/home_place.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 enum choice { predict, stats, methods, vaccine }
+
+void launchURL() async => await canLaunch(vaccineUrl)
+    ? await launch(vaccineUrl)
+    : throw 'Could not launch $vaccineUrl';
 
 class AppChoice extends StatefulWidget {
   @override
@@ -93,15 +97,11 @@ class _AppChoiceState extends State<AppChoice> {
                         genderText: 'COVID Stats'),
                   ),
                 ),
-                //stats card
+                //Vaccine card
                 Expanded(
                   flex: 1,
                   child: ReusableCard(
-                    onPressed: () {
-                      setState(() {
-                        selectedChoice = choice.vaccine;
-                      });
-                    },
+                    onPressed: launchURL,
                     colour: selectedChoice == choice.vaccine
                         ? kActiveCardColor
                         : kInactiveCardColor,
