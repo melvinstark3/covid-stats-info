@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:covid/views/world.dart';
 import 'package:covid/views/countries.dart';
-import 'package:covid/my_icons_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Dashboard extends StatefulWidget {
