@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:covid/views/world.dart';
 import 'package:covid/views/countries.dart';
 import 'package:covid/my_icons_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -50,14 +51,14 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
         currentIndex: currentIndex,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(MyIcons.globe_1),
+            icon: Icon(FontAwesomeIcons.globe),
             title: Text(
               "Global",
               style: TextStyle(fontFamily: 'MyFont'),
             ),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.flag),
+              icon: Icon(FontAwesomeIcons.flag),
               title: Text("Countries", style: TextStyle(fontFamily: 'MyFont'))),
         ],
       ),
