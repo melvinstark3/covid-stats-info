@@ -14,6 +14,8 @@ const kMinimumColleagues = 1.0;
 const kMaximumColleagues = 100.0;
 const vaccineUrl =
     'https://www.mohfw.gov.in/covid_vaccination/vaccination/index.html';
+const methodsUrl =
+    'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public';
 const kNumberTextStyle = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.w900,

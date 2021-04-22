@@ -13,6 +13,10 @@ void launchURL() async => await canLaunch(vaccineUrl)
     ? await launch(vaccineUrl)
     : throw 'Could not launch $vaccineUrl';
 
+void launchMURL() async => await canLaunch(methodsUrl)
+    ? await launch(methodsUrl)
+    : throw 'Could not launhc $methodsUrl';
+
 class AppChoice extends StatefulWidget {
   @override
   _AppChoiceState createState() => _AppChoiceState();
@@ -60,11 +64,7 @@ class _AppChoiceState extends State<AppChoice> {
                 Expanded(
                   flex: 1,
                   child: ReusableCard(
-                    onPressed: () {
-                      setState(() {
-                        selectedChoice = choice.methods;
-                      });
-                    },
+                    onPressed: launchMURL,
                     colour: selectedChoice == choice.methods
                         ? kActiveCardColor
                         : kInactiveCardColor,
