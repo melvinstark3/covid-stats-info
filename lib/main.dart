@@ -7,12 +7,15 @@ import 'package:covid/screens/input_page1.dart';
 import 'package:covid/screens/home_place.dart';
 import 'package:covid/screens/transport.dart';
 import 'package:covid/screens/splash.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(CovidCalculator());
 
 class CovidCalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
         primaryColor: Color(0xFF0A0E21),
@@ -20,7 +23,7 @@ class CovidCalculator extends StatelessWidget {
       ),
       initialRoute: '/splash',
       routes: {
-        '/': (context) => HomePlace(),
+        '/homeplace': (context) => HomePlace(),
         '/splash': (context) => Splash(),
         '/apartment': (context) => Apartment(),
         '/job': (context) => Job(),
