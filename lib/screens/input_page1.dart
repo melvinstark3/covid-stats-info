@@ -1,12 +1,12 @@
-import 'package:covid/results_page.dart';
+import 'package:covid/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_content.dart';
-import 'reusable_card.dart';
-import 'constants.dart';
-import 'bottom_button.dart';
-import 'round_icon_button.dart';
-import 'calculator_brain.dart';
+import 'package:covid/widgets/icon_content.dart';
+import 'package:covid/widgets/reusable_card.dart';
+import 'package:covid/constants/constants.dart';
+import 'package:covid/widgets/bottom_button.dart';
+import 'package:covid/widgets/round_icon_button.dart';
+import 'package:covid/methods/calculator_brain.dart';
 
 // male =3. female =4
 enum gender { male, female }

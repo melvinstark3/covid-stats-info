@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'package:covid/constants/constants.dart';
 
 class RoundIconButton extends StatelessWidget {
   final IconData icon;

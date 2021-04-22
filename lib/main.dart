@@ -1,13 +1,12 @@
-import 'package:covid/apartment.dart';
-import 'package:covid/diseases.dart';
-import 'package:covid/job.dart';
-import 'package:covid/results_page.dart';
+import 'package:covid/screens/apartment.dart';
+import 'package:covid/screens/diseases.dart';
+import 'package:covid/screens/job.dart';
+import 'package:covid/screens/results_page.dart';
 import 'package:flutter/material.dart';
-import 'input_page1.dart';
-import 'home_place.dart';
-import 'results_page.dart';
-import 'transport.dart';
-import 'splash.dart';
+import 'package:covid/screens/input_page1.dart';
+import 'package:covid/screens/home_place.dart';
+import 'package:covid/screens/transport.dart';
+import 'package:covid/screens/splash.dart';
 
 void main() => runApp(CovidCalculator());
 

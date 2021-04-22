@@ -1,7 +1,7 @@
-import 'package:covid/reusable_card.dart';
+import 'package:covid/widgets/reusable_card.dart';
 import 'package:flutter/material.dart';
-import 'constants.dart';
-import 'bottom_button.dart';
+import 'package:covid/constants/constants.dart';
+import 'package:covid/widgets/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
   final String covidResults;
