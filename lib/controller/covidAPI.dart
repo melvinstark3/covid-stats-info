@@ -5,8 +5,9 @@ import 'package:covid/model/countryDataModel.dart';
 
 class CovidAPI {
   Future<GlobalData> getCase() async {
-    String url = 'https://coronavirus-19-api.herokuapp.com/all';
-    final response = await http.get(url);
+    //String url = 'https://coronavirus-19-api.herokuapp.com/all';
+    final response = await http
+        .get(Uri.parse('https://coronavirus-19-api.herokuapp.com/all'));
 
     if (response.statusCode == 200) {
       return GlobalData.fromJSON(json.decode(response.body));
@@ -16,8 +17,9 @@ class CovidAPI {
   }
 
   Future<CountryDataList> getCountryData() async {
-    String url = 'https://coronavirus-19-api.herokuapp.com/countries';
-    final response = await http.get(url);
+    //String url = 'https://coronavirus-19-api.herokuapp.com/countries';
+    final response = await http
+        .get(Uri.parse('https://coronavirus-19-api.herokuapp.com/countries'));
 
     if (response.statusCode == 200) {
       final jsonRes = json.decode(response.body);
