@@ -114,28 +114,6 @@ class _AppChoiceState extends State<AppChoice> {
               ],
             ),
           ),
-          BottomButton(
-            onTap: () {
-              //   if (selectedChoice == choice.predict) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HomePlace()),
-              );
-              // } else if (selectedChoice == choice.methods) {
-              //   Navigator.push(context,
-              //       MaterialPageRoute(builder: (context) => Precautions()));
-              // } else if (selectedChoice == choice.vaccine) {
-              //   Navigator.push(context,
-              //       MaterialPageRoute(builder: (context) => Vaccine()));
-              // } else {
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => DashBoard()),
-              //   );
-              // }
-            },
-            buttonTitle: 'NEXT',
-          ),
         ],
       ),
     );
