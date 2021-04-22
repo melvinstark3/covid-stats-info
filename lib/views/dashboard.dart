@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:covid19/views/world.dart';
-import 'package:covid19/views/countries.dart';
-import 'package:covid19/my_icons_icons.dart';
+import 'package:covid/views/world.dart';
+import 'package:covid/views/countries.dart';
+import 'package:covid/my_icons_icons.dart';
 
 class Dashboard extends StatefulWidget {
   @override

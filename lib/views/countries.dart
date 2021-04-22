@@ -1,8 +1,8 @@
-import 'package:covid19/animation/bottomAnimation.dart';
-import 'package:covid19/customWidgets/customLoader.dart';
-import 'package:covid19/views/countriesDetails.dart';
+import 'package:covid/animation/bottomAnimation.dart';
+import 'package:covid/customWidgets/customLoader.dart';
+import 'package:covid/views/countriesDetails.dart';
 import 'package:flutter/material.dart';
-import 'package:covid19/controller/covidAPI.dart';
+import 'package:covid/controller/covidAPI.dart';
 import 'package:intl/intl.dart';
 
 class Country extends StatefulWidget {
