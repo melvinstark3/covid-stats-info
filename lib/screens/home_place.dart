@@ -1,5 +1,3 @@
-//import 'package:covid/results_page.dart';
-import 'package:covid/screens/input_page1.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:covid/widgets/icon_content.dart';
@@ -8,7 +6,6 @@ import 'package:covid/constants/constants.dart';
 import 'package:covid/widgets/bottom_button.dart';
 import 'apartment.dart';
 import 'job.dart';
-//import 'calculator_brain.dart';
 
 enum home { house, apartment }
 

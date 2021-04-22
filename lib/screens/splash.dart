@@ -1,3 +1,4 @@
+import 'package:covid/screens/appchoice.dart';
 import 'package:covid/screens/home_place.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class Splash extends StatelessWidget {
               fontFamily: 'MyFont',
               fontWeight: FontWeight.bold)),
       loaderColor: Colors.pink,
-      navigateAfterSeconds: HomePlace(),
+      navigateAfterSeconds: AppChoice(),
     );
   }
 }

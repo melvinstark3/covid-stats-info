@@ -1,4 +1,5 @@
 import 'package:covid/screens/apartment.dart';
+import 'package:covid/screens/appchoice.dart';
 import 'package:covid/screens/diseases.dart';
 import 'package:covid/screens/job.dart';
 import 'package:covid/screens/results_page.dart';
@@ -23,6 +24,7 @@ class CovidCalculator extends StatelessWidget {
       ),
       initialRoute: '/splash',
       routes: {
+        '/appchoice': (context) => AppChoice(),
         '/homeplace': (context) => HomePlace(),
         '/splash': (context) => Splash(),
         '/apartment': (context) => Apartment(),
