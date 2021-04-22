@@ -1,3 +1,4 @@
+import 'package:covid/views/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:covid/widgets/icon_content.dart';
@@ -85,6 +86,10 @@ class _AppChoiceState extends State<AppChoice> {
                   flex: 1,
                   child: ReusableCard(
                     onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dashboard()),
+                      );
                       setState(() {
                         selectedChoice = choice.stats;
                       });
