@@ -1,3 +1,4 @@
+import 'package:covid/screens/blood_group.dart';
 import 'package:covid/screens/input_page1.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -118,7 +119,7 @@ class _DiseasesState extends State<Diseases> {
               CalculatorBrain calc = CalculatorBrain(diseases: totalColor);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => InputPage1()),
+                MaterialPageRoute(builder: (context) => BloodGroup()),
               );
             },
             buttonTitle: 'NEXT',

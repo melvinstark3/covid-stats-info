@@ -8,6 +8,7 @@ import 'package:covid/screens/input_page1.dart';
 import 'package:covid/screens/home_place.dart';
 import 'package:covid/screens/transport.dart';
 import 'package:covid/screens/splash.dart';
+import 'package:covid/screens/blood_group.dart';
 import 'package:flutter/services.dart';
 
 void main() => runApp(CovidCalculator());
@@ -26,6 +27,7 @@ class CovidCalculator extends StatelessWidget {
       routes: {
         '/appchoice': (context) => AppChoice(),
         '/homeplace': (context) => HomePlace(),
+        'bloodgroup': (context) => BloodGroup(),
         '/splash': (context) => Splash(),
         '/apartment': (context) => Apartment(),
         '/job': (context) => Job(),
