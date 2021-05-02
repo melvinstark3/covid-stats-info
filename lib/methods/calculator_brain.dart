@@ -38,6 +38,7 @@ class CalculatorBrain {
     int jobProb;
     int floorProb;
     int familyProb;
+    int bloodProb;
     int diseasesProb = 5;
 
     if (diseases == 0) {
@@ -68,6 +69,18 @@ class CalculatorBrain {
       densityProb = 20;
     }
 
+    if (bloodType == 12 && bloodType == 121) {
+      bloodProb = 8;
+    } else if (bloodType == 122 && bloodType == 21 && bloodType == 22) {
+      bloodProb = 7;
+    } else if (bloodType == 11) {
+      bloodProb = 10;
+    } else if (bloodType == 31) {
+      bloodProb = 4;
+    } else {
+      bloodProb = 5;
+    }
+
     if (jobTypeNum == 2) {
       jobProb = 10;
     } else {
@@ -84,6 +97,7 @@ class CalculatorBrain {
         floorProb +
         jobProb +
         diseasesProb +
+        bloodProb +
         familyProb;
     if (_covidResult > 99) {
       _covidResult = 99;
