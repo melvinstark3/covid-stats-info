@@ -7,6 +7,7 @@ import 'package:covid/constants/constants.dart';
 import 'package:covid/widgets/bottom_button.dart';
 import 'package:covid/methods/calculator_brain.dart';
 import 'package:covid/widgets/round_icon_button.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 enum bloodGroup { ap, ane, bp, bne, abp, abne, op, one }
 
@@ -57,6 +58,11 @@ class _BloodGroupState extends State<BloodGroup> {
                                 icon: FontAwesomeIcons.plus,
                                 onTap: () {
                                   selectedBloodGroup = bloodGroup.ap;
+                                  Fluttertoast.showToast(
+                                      msg: "You Selected A Positive",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.BOTTOM,
+                                      timeInSecForIosWeb: 1);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -70,6 +76,11 @@ class _BloodGroupState extends State<BloodGroup> {
                               icon: FontAwesomeIcons.minus,
                               onTap: () {
                                 selectedBloodGroup = bloodGroup.ane;
+                                Fluttertoast.showToast(
+                                    msg: "You Selected A Negative",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM,
+                                    timeInSecForIosWeb: 1);
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -110,6 +121,11 @@ class _BloodGroupState extends State<BloodGroup> {
                                 icon: FontAwesomeIcons.plus,
                                 onTap: () {
                                   selectedBloodGroup = bloodGroup.bp;
+                                  Fluttertoast.showToast(
+                                      msg: "You Selected B Positive",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.BOTTOM,
+                                      timeInSecForIosWeb: 1);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -123,6 +139,11 @@ class _BloodGroupState extends State<BloodGroup> {
                               icon: FontAwesomeIcons.minus,
                               onTap: () {
                                 selectedBloodGroup = bloodGroup.bne;
+                                Fluttertoast.showToast(
+                                    msg: "You Selected B Negative",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM,
+                                    timeInSecForIosWeb: 1);
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -169,6 +190,11 @@ class _BloodGroupState extends State<BloodGroup> {
                                 icon: FontAwesomeIcons.plus,
                                 onTap: () {
                                   selectedBloodGroup = bloodGroup.abp;
+                                  Fluttertoast.showToast(
+                                      msg: "You Selected AB Positive.",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.BOTTOM,
+                                      timeInSecForIosWeb: 1);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -182,6 +208,11 @@ class _BloodGroupState extends State<BloodGroup> {
                               icon: FontAwesomeIcons.minus,
                               onTap: () {
                                 selectedBloodGroup = bloodGroup.abne;
+                                Fluttertoast.showToast(
+                                    msg: "You Selected AB Negative",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM,
+                                    timeInSecForIosWeb: 1);
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -222,6 +253,11 @@ class _BloodGroupState extends State<BloodGroup> {
                                 icon: FontAwesomeIcons.plus,
                                 onTap: () {
                                   selectedBloodGroup = bloodGroup.op;
+                                  Fluttertoast.showToast(
+                                      msg: "You Selected O Positive",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.BOTTOM,
+                                      timeInSecForIosWeb: 1);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -235,6 +271,11 @@ class _BloodGroupState extends State<BloodGroup> {
                               icon: FontAwesomeIcons.minus,
                               onTap: () {
                                 selectedBloodGroup = bloodGroup.one;
+                                Fluttertoast.showToast(
+                                    msg: "You Selected O Negative",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM,
+                                    timeInSecForIosWeb: 1);
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
