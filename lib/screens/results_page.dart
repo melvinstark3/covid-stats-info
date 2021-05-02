@@ -68,7 +68,6 @@ class ResultsPage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.pop(context);
                 Navigator.pop(context);
-                Navigator.pop(context);
               },
               buttonTitle: 'RE-CALCULATE')
         ],
