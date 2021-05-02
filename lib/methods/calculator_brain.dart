@@ -3,6 +3,7 @@ class CalculatorBrain {
   final int familyMembers;
   final int peopleOnFloor;
   final int floors;
+  final int myFloor;
   final int inhabitants;
   final int workHours;
   final int colleagues;
@@ -19,6 +20,7 @@ class CalculatorBrain {
       this.familyMembers,
       this.peopleOnFloor,
       this.floors,
+      this.myFloor,
       this.inhabitants,
       this.workHours,
       this.colleagues,
@@ -32,20 +34,26 @@ class CalculatorBrain {
     int genderProb;
     int densityProb;
     int jobProb;
-    int floorProb = 17;
+    int floorProb;
     int familyProb;
     int diseasesProb = 5;
 
     if (diseases == 0) {
       diseasesProb = 10;
-    } else {
-      diseasesProb = 5;
     }
 
     if (genderNum == 3) {
       genderProb = 10;
     } else {
       genderProb = 5;
+    }
+
+    if (myFloor == 1) {
+      floorProb = 10;
+    } else if (myFloor == 2) {
+      floorProb = 10;
+    } else {
+      floorProb = 0;
     }
 
     if (density <= 50) {
