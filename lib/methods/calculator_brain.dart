@@ -11,6 +11,7 @@ class CalculatorBrain {
   final int jobTypeNum;
   final int age;
   final int genderNum;
+  final int bloodType;
   final int diseases;
 
   double _covidResult;
@@ -27,6 +28,7 @@ class CalculatorBrain {
       this.interactions,
       this.age,
       this.jobTypeNum,
+      this.bloodType,
       this.diseases,
       this.genderNum});
 

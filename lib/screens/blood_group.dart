@@ -9,6 +9,7 @@ import 'package:covid/methods/calculator_brain.dart';
 import 'package:covid/widgets/round_icon_button.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+// 11,12,21,22,121,122,31,32
 enum bloodGroup { ap, ane, bp, bne, abp, abne, op, one }
 
 class BloodGroup extends StatefulWidget {
@@ -18,6 +19,7 @@ class BloodGroup extends StatefulWidget {
 
 class _BloodGroupState extends State<BloodGroup> {
   bloodGroup selectedBloodGroup;
+  int bloodType;
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +65,9 @@ class _BloodGroupState extends State<BloodGroup> {
                                       toastLength: Toast.LENGTH_SHORT,
                                       gravity: ToastGravity.BOTTOM,
                                       timeInSecForIosWeb: 1);
+                                  bloodType = 11;
+                                  CalculatorBrain calc =
+                                      CalculatorBrain(bloodType: bloodType);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -81,6 +86,9 @@ class _BloodGroupState extends State<BloodGroup> {
                                     toastLength: Toast.LENGTH_SHORT,
                                     gravity: ToastGravity.BOTTOM,
                                     timeInSecForIosWeb: 1);
+                                bloodType = 12;
+                                CalculatorBrain calc =
+                                    CalculatorBrain(bloodType: bloodType);
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -126,6 +134,9 @@ class _BloodGroupState extends State<BloodGroup> {
                                       toastLength: Toast.LENGTH_SHORT,
                                       gravity: ToastGravity.BOTTOM,
                                       timeInSecForIosWeb: 1);
+                                  bloodType = 21;
+                                  CalculatorBrain calc =
+                                      CalculatorBrain(bloodType: bloodType);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -144,6 +155,9 @@ class _BloodGroupState extends State<BloodGroup> {
                                     toastLength: Toast.LENGTH_SHORT,
                                     gravity: ToastGravity.BOTTOM,
                                     timeInSecForIosWeb: 1);
+                                bloodType = 22;
+                                CalculatorBrain calc =
+                                    CalculatorBrain(bloodType: bloodType);
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -195,6 +209,9 @@ class _BloodGroupState extends State<BloodGroup> {
                                       toastLength: Toast.LENGTH_SHORT,
                                       gravity: ToastGravity.BOTTOM,
                                       timeInSecForIosWeb: 1);
+                                  bloodType = 121;
+                                  CalculatorBrain calc =
+                                      CalculatorBrain(bloodType: bloodType);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -213,6 +230,9 @@ class _BloodGroupState extends State<BloodGroup> {
                                     toastLength: Toast.LENGTH_SHORT,
                                     gravity: ToastGravity.BOTTOM,
                                     timeInSecForIosWeb: 1);
+                                bloodType = 122;
+                                CalculatorBrain calc =
+                                    CalculatorBrain(bloodType: bloodType);
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -258,6 +278,9 @@ class _BloodGroupState extends State<BloodGroup> {
                                       toastLength: Toast.LENGTH_SHORT,
                                       gravity: ToastGravity.BOTTOM,
                                       timeInSecForIosWeb: 1);
+                                  bloodType = 31;
+                                  CalculatorBrain calc =
+                                      CalculatorBrain(bloodType: bloodType);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -276,6 +299,9 @@ class _BloodGroupState extends State<BloodGroup> {
                                     toastLength: Toast.LENGTH_SHORT,
                                     gravity: ToastGravity.BOTTOM,
                                     timeInSecForIosWeb: 1);
+                                bloodType = 32;
+                                CalculatorBrain calc =
+                                    CalculatorBrain(bloodType: bloodType);
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
