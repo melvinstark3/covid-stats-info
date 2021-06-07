@@ -3,6 +3,7 @@ import 'package:covid/screens/appchoice.dart';
 import 'package:covid/screens/diseases.dart';
 import 'package:covid/screens/job.dart';
 import 'package:covid/screens/results_page.dart';
+import 'package:covid/screens/work.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/screens/input_page1.dart';
 import 'package:covid/screens/home_place.dart';
@@ -30,6 +31,7 @@ class CovidCalculator extends StatelessWidget {
         'bloodgroup': (context) => BloodGroup(),
         '/splash': (context) => Splash(),
         '/apartment': (context) => Apartment(),
+        '/work': (context) => Work(),
         '/job': (context) => Job(),
         '/inputPage1': (context) => InputPage1(),
         'transport': (context) => Transport(),
