@@ -20,7 +20,7 @@ class _TransportState extends State<Transport> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('COVID'),
+        title: Text('Transport'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

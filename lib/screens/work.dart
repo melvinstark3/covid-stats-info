@@ -1,28 +1,28 @@
-import 'package:covid/screens/work.dart';
+import 'package:covid/screens/transport.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:covid/widgets/icon_content.dart';
 import 'package:covid/widgets/reusable_card.dart';
 import 'package:covid/constants/constants.dart';
 import 'package:covid/widgets/bottom_button.dart';
-import 'apartment.dart';
-import 'work.dart';
+import 'job.dart';
 
-enum home { house, apartment }
+enum work { wfh, student }
 
-class HomePlace extends StatefulWidget {
+class Work extends StatefulWidget {
   @override
-  _HomePlaceState createState() => _HomePlaceState();
+  _WorkState createState() => _WorkState();
 }
 
-class _HomePlaceState extends State<HomePlace> {
-  home selectedHome;
+class _WorkState extends State<Work> {
+  work selectedWork;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('You Live in ?'),
+        title: Text('COVID'),
+        centerTitle: true,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -32,15 +32,15 @@ class _HomePlaceState extends State<HomePlace> {
             child: ReusableCard(
               onPressed: () {
                 setState(() {
-                  selectedHome = home.house;
+                  selectedWork = work.wfh;
                 });
               },
-              colour: selectedHome == home.house
+              colour: selectedWork == work.wfh
                   ? kActiveCardColor
                   : kInactiveCardColor,
               cardChild: IconContent(
-                genderIcon: FontAwesomeIcons.home,
-                genderText: 'House',
+                genderIcon: FontAwesomeIcons.laptopHouse,
+                genderText: 'Work From Home',
               ),
             ),
           ),
@@ -49,28 +49,27 @@ class _HomePlaceState extends State<HomePlace> {
             child: ReusableCard(
               onPressed: () {
                 setState(() {
-                  selectedHome = home.apartment;
+                  selectedWork = work.student;
                 });
               },
-              colour: selectedHome == home.apartment
+              colour: selectedWork == work.student
                   ? kActiveCardColor
                   : kInactiveCardColor,
               cardChild: IconContent(
-                  genderIcon: FontAwesomeIcons.building,
-                  genderText: 'Apartment'),
+                  genderIcon: FontAwesomeIcons.userTie, genderText: 'Student'),
             ),
           ),
           BottomButton(
             onTap: () {
-              if (selectedHome == home.house) {
+              if (selectedWork == work.wfh) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Work()),
+                  MaterialPageRoute(builder: (context) => Job()),
                 );
               } else {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Apartment()),
+                  MaterialPageRoute(builder: (context) => Transport()),
                 );
               }
             },

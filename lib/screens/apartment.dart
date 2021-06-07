@@ -1,4 +1,4 @@
-import 'package:covid/screens/job.dart';
+import 'package:covid/screens/work.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/widgets/reusable_card.dart';
 import 'package:covid/constants/constants.dart';
@@ -155,7 +155,7 @@ class _ApartmentState extends State<Apartment> {
               print(myFloor);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Job()),
+                MaterialPageRoute(builder: (context) => Work()),
               );
             },
             buttonTitle: 'NEXT',

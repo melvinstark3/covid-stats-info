@@ -1,3 +1,4 @@
+import 'package:covid/screens/precautions_choice.dart';
 import 'package:covid/views/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,10 +14,6 @@ void launchURL() async => await canLaunch(vaccineUrl)
     ? await launch(vaccineUrl)
     : throw 'Could not launch $vaccineUrl';
 
-void launchMURL() async => await canLaunch(methodsUrl)
-    ? await launch(methodsUrl)
-    : throw 'Could not launhc $methodsUrl';
-
 class AppChoice extends StatefulWidget {
   @override
   _AppChoiceState createState() => _AppChoiceState();
@@ -30,6 +27,7 @@ class _AppChoiceState extends State<AppChoice> {
     return Scaffold(
       appBar: AppBar(
         title: Text('COVID-19'),
+        centerTitle: true,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -64,7 +62,16 @@ class _AppChoiceState extends State<AppChoice> {
                 Expanded(
                   flex: 1,
                   child: ReusableCard(
-                    onPressed: launchMURL,
+                    onPressed: () {
+                      setState(() {
+                        selectedChoice = choice.methods;
+                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PrecautionChoice()),
+                      );
+                    },
                     colour: selectedChoice == choice.methods
                         ? kActiveCardColor
                         : kInactiveCardColor,
